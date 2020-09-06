@@ -30,9 +30,9 @@ spring:
 #        url: jdbc:mysql://47.99.130.104:3306/painting?characterEncoding=utf8&useSSL=false
 #        username: paintingNewDev
 #        password: paintingNewDev_2019
-        url: jdbc:mysql://121.196.62.192:3306/painting?characterEncoding=utf8&useSSL=false
-        username: paintingPro
-        password: paintingNewPro_2020
+        url: jdbc:mysql://127.0.0.1:3306/mystudy?characterEncoding=utf8&useSSL=false
+        username: root
+        password: 123
 #        name: paintingDev
 #        url: jdbc:mysql://47.99.130.104:3306/paintingDev?characterEncoding=utf8&useSSL=false
 #        username: lehupaintingDev
