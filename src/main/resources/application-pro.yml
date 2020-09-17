@@ -14,11 +14,6 @@ qd:
 
 server:
  port: 8066
-# ssl:
-#   key-store: classpath:3356599_phoenix.hlcruinspark.com.pfx
-#   key-store-password: HFI695p7
-#   key-store-type: PKCS12
-#   enabled: true
  tomcat.uri-encoding: UTF-8
 spring:
  jackson:
@@ -44,26 +39,6 @@ spring:
 #     port: 6379
 #     password: loforce
 
- redis:
-   database: 0
-   host: 121.196.62.192
-   port: 6379
-   password: loforceRedis
-
-# redis:
-#     database: 0
-#     host: 192.168.0.124
-#     port: 6379
-#     password: 123456
-
-#        timeBetweenEvictionRunsMillis: 60000
-#        minEvictableIdleTimeMillis: 300000
-#        validationQuery: select 'x'
-#        testWhileIdle: true
-#        testOnBorrow: false
-#        testOnReturn: false
-#        poolPreparedStatements: true
-#        maxOpenPreparedStatements: 20
 
 mybatis:
   mapper-locations: classpath:mappers/*.xml
@@ -88,20 +63,5 @@ cors:
 
 
 
-#ftpconfig:
-#  ip: 192.168.17.92
-#  port: 21
-#  userName: ftpuser1
-#  passWord: 123456
-#  location: /upload
-#  webPreURL: http://test1.wuxicloud.com/ibaby
-#  skuCertLocation:
-#  paymentCertLocation: /payment
-#  RegisterLocation: /register
-#  quoteWebPreURL: http://192.168.17.92:8082
-#  fileQuoteLocation: /upload
-#  indexQuoteLocation: /indeximg
-#  staticnavLocation: /staticnav
-#  goodsLocation: /goods/middle
 
 
