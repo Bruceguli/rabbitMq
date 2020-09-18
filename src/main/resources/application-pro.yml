@@ -22,7 +22,7 @@ spring:
 #    defaultPropertyInclusion: NON_DEFAULT
  datasource:
         name: mystudy
-        url: jdbc:mysql://127.0.0.1:3306/mystudy?characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://127.0.0.1:3306/mystudy?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123
         # 使用druid数据源
