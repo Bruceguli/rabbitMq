@@ -24,7 +24,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-public class Swagger {
+public class Swagger2 {
     /**
      * 创建API应用
      * apiInfo() 增加API相关信息
@@ -38,7 +38,7 @@ public class Swagger {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.gl.rabbit.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -52,7 +52,7 @@ public class Swagger {
         return new ApiInfoBuilder()
                 .title("测试Swagger项目")
                 .description("ceshi")
-                .termsOfServiceUrl("https://www.cnblogs.com/liconglong/")
+                .termsOfServiceUrl("https://blog.csdn.net/ityqing")
                 .contact("lcl")
                 .version("1.0")
                 .build();
