@@ -1,15 +1,20 @@
-package com.example.gl.rabbit.controller;
+package com.example.gl.rabbit.swagger;
 
+import com.alibaba.fastjson.JSON;
+import com.example.gl.rabbit.lehuBase.ApiResult;
+import com.example.gl.rabbit.lehuBase.BaseController;
+import com.example.gl.rabbit.swagger.request.ArtLabelDeleteByNoRequest;
+import com.example.gl.rabbit.swagger.request.ArtisticProductListRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.ParseException;
+import java.util.List;
 
 /**
  * \* 欢迎关注公众号:大立Style
@@ -20,10 +25,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * \* Date: 2020/9/18 Time: 7:47
  * \
  */
+
+//测试地址http://localhost:8066/swagger-ui.html#/swagger-test-controller
 @Controller
 @RequestMapping("/menglongdeyeController")
 @Api(value = "测试接口")
-public class SwaggerTestController {
+public class SwaggerTestController extends BaseController {
 
     @ResponseBody
     @RequestMapping(value ="/test1", method= RequestMethod.GET)
@@ -36,6 +43,33 @@ public class SwaggerTestController {
             return "错了！！！";
         }
 
+    }
+
+    /**
+     * 公司实例get请求
+     * @param request
+     * @return
+     * @throws ParseException
+     */
+    @ResponseBody
+    @RequestMapping(value ="/getArtisticProductList", method= RequestMethod.GET)
+    @ApiImplicitParam(paramType="query", name = "ArtisticProductListRequest", value = "{\"pageNum\":\"1\",\"pageSize\":\"999\"}", required = true, dataType = "Json",defaultValue = "{\"pageNum\":\"1\",\"pageSize\":\"999\",\"artisticProductName\":\"可\"}")
+    public ApiResult getArtisticProductList(@RequestParam("ArtisticProductListRequest") String request) throws ParseException {
+        ArtisticProductListRequest activityListRequest = JSON.parseObject(request, ArtisticProductListRequest.class);
+        System.out.println(request);
+        return success("keyima");
+    }
+
+    /**
+     * 公司实例Post请求
+     */
+    @ResponseBody
+    @RequestMapping(value ="/deleteArtLabel", method= RequestMethod.POST)
+    @ApiImplicitParam(paramType="query", name = "ArtLabelDeleteByNoRequest", value = "{\"artlabelNo\":\"100\"}",
+            required = true, dataType = "Json",defaultValue = "{\"artlabelNo\":\"100\"}")
+    public ApiResult deletePCArtLabel(@RequestBody ArtLabelDeleteByNoRequest artLabelDeleteByNoRequest) {
+        System.out.println(artLabelDeleteByNoRequest);
+        return success("删除成功!");
     }
 
     @ResponseBody

@@ -38,7 +38,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.gl.rabbit.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.gl.rabbit.swagger"))
                 .paths(PathSelectors.any())
                 .build();
     }
